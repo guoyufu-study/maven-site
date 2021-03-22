@@ -31,27 +31,23 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ https://maven.apache.org/doxia/references/apt-format.html
 
-Available Plugins
+可用插件
 
-  Maven is - at its heart - a plugin execution framework; all work is done by plugins. Looking for
-  a specific goal to execute? This page lists the core plugins and others. There are the build and the reporting
-  plugins:
+  Maven的核心是一个插件执行框架；所有的工作都是由插件完成的。
+  寻找一个具体的目标来执行？这个页面列出了核心插件和其他插件。有构建插件和报告插件：
 
-  * <<Build plugins>> will be executed during the build and they should be configured in the <<<\<build/\>>>>
-  element from the POM.
+  * <<Build plugins>> 将在构建过程中执行，它们应该在POM中的 <<<\<build/\>>>> 元素中配置。
+  * <<Reporting plugins>> 将在站点生成过程中执行，它们应该在POM的
+   <<<\<reporting/\>>>> 元素中配置。因为报告插件的结果是生成站点的一部分，所以报告插件应该是国际化和本地化的。
+   您可以阅读更多关于 {{{./localization.html}我们的插件本地化}} 以及如何提供帮助的信息。
 
-  * <<Reporting plugins>> will be executed during the site generation and they should be configured in the
-  <<<\<reporting/\>>>> element from the POM. Because the result of a Reporting plugin is part of the generated site,
-  Reporting plugins should be both internationalized and localized. You can read more about the
-  {{{./localization.html}localization of our plugins}} and how you can help.
+   []
 
-  []
+* 由Maven项目支持
 
-* Supported By The Maven Project
-
-  To see the most up-to-date list browse the Maven repository, specifically
-  the {{{https://repo.maven.apache.org/maven2/org/apache/maven/plugins/} <<<org/apache/maven/plugins>>>}} subfolder.
-  <(Plugins are organized according to a directory structure that resembles the standard Java package naming convention)>
+   要查看最新的列表，请浏览Maven存储库，
+   特别是 {{{https://repo.maven.apache.org/maven2/org/apache/maven/plugins/}<<<org/apache/maven/plugins>>>}} 子目录。
+   <(插件是根据类似于标准Java包命名约定的目录结构来组织的)>
 
   ~~ TODO: the repository manager should be able to produce a page like this. Ensure all descriptions are in the POM of these plugins.
 
@@ -63,9 +59,9 @@ Available Plugins
 
 
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-|| <<Plugin>>                                                  || <<Type*>> || <<Version>> || <<Release Date>> || <<Description>> || <<Source Repository>> || <<Issue Tracking>>
+|| <<插件>>                                                    || <<类型*>>  || <<版本>>     || <<发行日期>> || <<描述>> || <<源代码库>> || <<问题追踪>>
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| <<Core plugins>>                                             |            |              |            | <<Plugins corresponding to default core phases (ie. clean, compile). They may have multiple goals as well.>> | |
+| <<Core plugins>>                                             |            |              |            | <<与默认核心阶段相对应的插件（即清理、编译）。他们也可能有多个目标。>> | |
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-clean-plugin/} <<<clean>>>}}               | B          | 3.1.0        | 2018-04-14 | Clean up after the build. | {{{https://gitbox.apache.org/repos/asf/maven-clean-plugin.git}Git}} / {{{https://github.com/apache/maven-clean-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MCLEAN}Jira MCLEAN}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -73,7 +69,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-deploy-plugin/} <<<deploy>>>}}             | B          | 3.0.0-M1     | 2018-09-23 | Deploy the built artifact to the remote repository. | {{{https://gitbox.apache.org/repos/asf/maven-deploy-plugin.git}Git}} / {{{https://github.com/apache/maven-deploy-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MDEPLOY}Jira MDEPLOY}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/surefire/maven-failsafe-plugin/} <<<failsafe>>>}}        | B          | 3.0.0-M5     | 2020-06-17 | Run the JUnit integration tests in an isolated classloader. | {{{https://gitbox.apache.org/repos/asf/maven-surefire.git}Git}} / {{{https://github.com/apache/maven-surefire/}GitHub}} | {{{https://issues.apache.org/jira/browse/SUREFIRE}Jira SUREFIRE}}
+| {{{/surefire/maven-failsafe-plugin/} <<<failsafe>>>}}        | B          | 3.0.0-M5     | 2020-06-17 | 在独立的类加载器中运行JUnit集成测试。 | {{{https://gitbox.apache.org/repos/asf/maven-surefire.git}Git}} / {{{https://github.com/apache/maven-surefire/}GitHub}} | {{{https://issues.apache.org/jira/browse/SUREFIRE}Jira SUREFIRE}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-install-plugin/} <<<install>>>}}           | B          | 3.0.0-M1     | 2018-09-23 | Install the built artifact into the local repository. | {{{https://gitbox.apache.org/repos/asf/maven-install-plugin.git}Git}} / {{{https://github.com/apache/maven-install-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MINSTALL}Jira MINSTALL}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -81,11 +77,11 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-site-plugin/} <<<site>>>}}                 | B          | 3.9.1        | 2020-06-24 | Generate a site for the current project. | {{{https://gitbox.apache.org/repos/asf/maven-site-plugin.git}Git}} / {{{https://github.com/apache/maven-site-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSITE}Jira MSITE}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/surefire/maven-surefire-plugin/} <<<surefire>>>}}        | B          | 3.0.0-M5     | 2020-06-17 | Run the JUnit unit tests in an isolated classloader. | {{{https://gitbox.apache.org/repos/asf/maven-surefire.git}Git}} / {{{https://github.com/apache/maven-surefire/}GitHub}} | {{{https://issues.apache.org/jira/browse/SUREFIRE}Jira SUREFIRE}}
+| {{{/surefire/maven-surefire-plugin/} <<<surefire>>>}}        | B          | 3.0.0-M5     | 2020-06-17 | 在独立的类加载器中运行JUnit单元测试。 | {{{https://gitbox.apache.org/repos/asf/maven-surefire.git}Git}} / {{{https://github.com/apache/maven-surefire/}GitHub}} | {{{https://issues.apache.org/jira/browse/SUREFIRE}Jira SUREFIRE}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-verifier-plugin/} <<<verifier>>>}}         | B          | 1.1          | 2015-04-14 | Useful for integration tests - verifies the existence of certain conditions. | {{{https://gitbox.apache.org/repos/asf/maven-verifier-plugin.git}Git}} / {{{https://github.com/apache/maven-verifier-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MVERIFIER}Jira MVERIFIER}}
+| {{{/plugins/maven-verifier-plugin/} <<<verifier>>>}}         | B          | 1.1          | 2015-04-14 | 用于集成测试——验证某些条件的存在。 | {{{https://gitbox.apache.org/repos/asf/maven-verifier-plugin.git}Git}} / {{{https://github.com/apache/maven-verifier-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MVERIFIER}Jira MVERIFIER}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| <<Packaging types/tools>>                                    |            |              |            | <<These plugins relate to packaging respective artifact types.>> | |
+| <<Packaging types/tools>>                                    |            |              |            | <<这些插件与打包各自的工件类型有关。>> | |
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                   | B          | 3.2.0        | 2021-01-03 | Generate an EAR from the current project. | {{{https://gitbox.apache.org/repos/asf/maven-ear-plugin.git}Git}} / {{{https://github.com/apache/maven-ear-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MEAR}Jira MEAR}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -107,7 +103,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-jmod-plugin/} <<<jmod>>>}}                 | B          | 3.0.0-alpha-1 | 2017-09-17 | Build Java JMod files. | {{{https://gitbox.apache.org/repos/asf/maven-jmod-plugin.git}Git}} / {{{https://github.com/apache/maven-jmod-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MJMOD}Jira MJMOD}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| <<Reporting plugins>>                                        |            |              |            | <<Plugins which generate reports, are configured as reports in the POM and run under the site generation lifecycle.>> | |
+| <<Reporting plugins>>                                        |            |              |            | <<生成报告的插件在POM中配置为报告，并在站点生成生命周期下运行。>> | |
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-changelog-plugin/} <<<changelog>>>}}       | R          | 2.3          | 2014-06-24 | Generate a list of recent changes from your SCM. | {{{https://gitbox.apache.org/repos/asf/maven-changelog-plugin.git}Git}} / {{{https://github.com/apache/maven-changelog-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MCHANGELOG}Jira MCHANGELOG}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -131,25 +127,25 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | R | 3.1.1 | 2020-08-30 | Generate standard project reports. | {{{https://gitbox.apache.org/repos/asf/maven-project-info-reports-plugin.git}Git}} / {{{https://github.com/apache/maven-project-info-reports-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MPIR}Jira MPIR}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/surefire/maven-surefire-report-plugin/} <<<surefire-report>>>}} | R   | 3.0.0-M5     | 2020-06-17 | Generate a report based on the results of unit tests. | {{{https://gitbox.apache.org/repos/asf/maven-surefire.git}Git}} / {{{https://github.com/apache/maven-surefire/}GitHub}} | {{{https://issues.apache.org/jira/browse/SUREFIRE}Jira SUREFIRE}}
+| {{{/surefire/maven-surefire-report-plugin/} <<<surefire-report>>>}} | R   | 3.0.0-M5     | 2020-06-17 | 根据单元测试的结果生成报告 | {{{https://gitbox.apache.org/repos/asf/maven-surefire.git}Git}} / {{{https://github.com/apache/maven-surefire/}GitHub}} | {{{https://issues.apache.org/jira/browse/SUREFIRE}Jira SUREFIRE}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| <<Tools>>                                                    |            |              |            | <<These are miscellaneous tools available through Maven by default.>> | |
+| <<Tools>>                                                    |            |              |            | <<这些是Maven默认提供的各种（miscellaneous）工具。>> | |
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-antrun-plugin/} <<<antrun>>>}}             | B          | 3.0.0        | 2020-04-15 | Run a set of ant tasks from a phase of the build. | {{{https://gitbox.apache.org/repos/asf/maven-antrun-plugin.git}Git}} / {{{https://github.com/apache/maven-antrun-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MANTRUN}Jira MANTRUN}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-artifact-plugin/} <<<artifact>>>}}         | B          | 3.0.0        | 2021-02-20 | Manage artifacts tasks like buildinfo. | {{{https://gitbox.apache.org/repos/asf/maven-artifact-plugin.git}Git}} / {{{https://github.com/apache/maven-artifact-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MARTIFACT}Jira MARTIFACT}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/archetype/maven-archetype-plugin/} <<<archetype>>>}}     | B          | 3.2.0        | 2020-07-21 | Generate a skeleton project structure from an archetype. | {{{https://gitbox.apache.org/repos/asf/maven-archetype.git}Git}} / {{{https://github.com/apache/maven-archetype/}GitHub}} | {{{https://issues.apache.org/jira/browse/ARCHETYPE}Jira ARCHETYPE}}
+| {{{/archetype/maven-archetype-plugin/} <<<archetype>>>}}     | B          | 3.2.0        | 2020-07-21 | 从原型（archetype）中生成一个框架（skeleton）项目结构。 | {{{https://gitbox.apache.org/repos/asf/maven-archetype.git}Git}} / {{{https://github.com/apache/maven-archetype/}GitHub}} | {{{https://issues.apache.org/jira/browse/ARCHETYPE}Jira ARCHETYPE}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-assembly-plugin/} <<<assembly>>>}}         | B          | 3.3.0        | 2020-04-30 | Build an assembly (distribution) of sources and/or binaries. | {{{https://gitbox.apache.org/repos/asf/maven-assembly-plugin.git}Git}} / {{{https://github.com/apache/maven-assembly-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MASSEMBLY}Jira MASSEMBLY}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-dependency-plugin/} <<<dependency>>>}}     | B+R        | 3.1.2        | 2020-03-07 | Dependency manipulation (copy, unpack) and analysis. | {{{https://gitbox.apache.org/repos/asf/maven-dependency-plugin.git}Git}} / {{{https://github.com/apache/maven-dependency-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MDEP}Jira MDEP}}
+| {{{/plugins/maven-dependency-plugin/} <<<dependency>>>}}     | B+R        | 3.1.2        | 2020-03-07 | 依赖操作（复制、解包）和分析。 | {{{https://gitbox.apache.org/repos/asf/maven-dependency-plugin.git}Git}} / {{{https://github.com/apache/maven-dependency-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MDEP}Jira MDEP}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/enforcer/maven-enforcer-plugin/} <<<enforcer>>>}}        | B          | 3.0.0-M3     | 2019-11-23 | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution. | {{{https://gitbox.apache.org/repos/asf/maven-enforcer.git}Git}} / {{{https://github.com/apache/maven-enforcer/}GitHub}} | {{{https://issues.apache.org/jira/browse/MENFORCER}Jira MENFORCER}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-gpg-plugin/} <<<gpg>>>}}                   | B          | 1.6          | 2015-01-19 | Create signatures for the artifacts and poms. | {{{https://gitbox.apache.org/repos/asf/maven-gpg-plugin.git}Git}} / {{{https://github.com/apache/maven-gpg-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MGPG}Jira MGPG}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-help-plugin/} <<<help>>>}}                 | B          | 3.2.0        | 2019-04-16 | Get information about the working environment for the project. | {{{https://gitbox.apache.org/repos/asf/maven-help-plugin.git}Git}} / {{{https://github.com/apache/maven-help-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MPH}Jira MPH}}
+| {{{/plugins/maven-help-plugin/} <<<help>>>}}                 | B          | 3.2.0        | 2019-04-16 | 获取有关项目工作环境的信息。 | {{{https://gitbox.apache.org/repos/asf/maven-help-plugin.git}Git}} / {{{https://github.com/apache/maven-help-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MPH}Jira MPH}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-invoker-plugin/} <<<invoker>>>}}           | B+R        | 3.2.2        | 2021-02-20 | Run a set of Maven projects and verify the output. | {{{https://gitbox.apache.org/repos/asf/maven-invoker-plugin.git}Git}} / {{{https://github.com/apache/maven-invoker-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MINVOKER}Jira MINVOKER}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -159,7 +155,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-patch-plugin/} <<<patch>>>}}               | B          | 1.2          | 2015-03-09 | Use the gnu patch tool to apply patch files to source code. | {{{https://gitbox.apache.org/repos/asf/maven-patch-plugin.git}Git}} / {{{https://github.com/apache/maven-patch-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MPATCH}Jira MPATCH}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-pdf-plugin/} <<<pdf>>>}}                   | B          | 1.4          | 2017-12-28 | Generate a PDF version of your project's documentation. | {{{https://gitbox.apache.org/repos/asf/maven-pdf-plugin.git}Git}} / {{{https://github.com/apache/maven-pdf-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MPDF}Jira MPDF}}
+| {{{/plugins/maven-pdf-plugin/} <<<pdf>>>}}                   | B          | 1.4          | 2017-12-28 | 生成项目文档的PDF版本。 | {{{https://gitbox.apache.org/repos/asf/maven-pdf-plugin.git}Git}} / {{{https://github.com/apache/maven-pdf-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MPDF}Jira MPDF}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugin-tools/maven-plugin-plugin/} <<<plugin>>>}}        | B+R        | 3.6.0        | 2018-11-01 | Create a Maven plugin descriptor for any mojos found in the source tree, to include in the JAR. | {{{https://gitbox.apache.org/repos/asf/maven-plugin-tools.git}Git}} / {{{https://github.com/apache/maven-plugin-tools/}GitHub}} | {{{https://issues.apache.org/jira/browse/MPLUGIN}Jira MPLUGIN}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -167,26 +163,26 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-remote-resources-plugin/} <<<remote-resources>>>}}| B   | 1.7.0        | 2020-01-21 | Copy remote resources to the output directory for inclusion in the artifact. | {{{https://gitbox.apache.org/repos/asf/maven-remote-resources-plugin.git}Git}} / {{{https://github.com/apache/maven-remote-resources-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MRRESOURCES}Jira MRRESOURCES}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/scm/maven-scm-plugin/} <<<scm>>>}}                       | B          | 1.11.2       | 2019-03-21 | Execute SCM commands for the current project. | {{{https://gitbox.apache.org/repos/asf/maven-scm.git }Git}} / {{{https://github.com/apache/maven-scm/}GitHub}} | {{{https://issues.apache.org/jira/browse/SCM}Jira SCM}}
+| {{{/scm/maven-scm-plugin/} <<<scm>>>}}                       | B          | 1.11.2       | 2019-03-21 | 为当前项目执行SCM命令。 | {{{https://gitbox.apache.org/repos/asf/maven-scm.git }Git}} / {{{https://github.com/apache/maven-scm/}GitHub}} | {{{https://issues.apache.org/jira/browse/SCM}Jira SCM}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-scm-publish-plugin/} <<<scm-publish>>>}}   | B          | 3.1.0        | 2020-12-26 | Publish your Maven website to a scm location. | {{{https://gitbox.apache.org/repos/asf/maven-scm-publish-plugin.git}Git}} / {{{https://github.com/apache/maven-scm-publish-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSCMPUB}Jira MSCMPUB}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-scripting-plugin/} <<<scripting>>>}}       | B          | 3.0.0        | 2021-03-01 | The Maven Scripting Plugin wraps the Scripting API according to JSR223. | {{{https://gitbox.apache.org/repos/asf/maven-scripting-plugin.git}Git}} / {{{https://github.com/apache/maven-scripting-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSCRIPTING}Jira MSCRIPTING}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-stage-plugin/} <<<stage>>>}}               | B          | 1.0          | 2015-03-03 | Assists with release staging and promotion. | {{{https://gitbox.apache.org/repos/asf/maven-stage-plugin.git}Git}} / {{{https://github.com/apache/maven-stage-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSTAGE}Jira MSTAGE}}
+| {{{/plugins/maven-stage-plugin/} <<<stage>>>}}               | B          | 1.0          | 2015-03-03 | 协助（Assists with）发布（release staging）和推广（promotion）。 | {{{https://gitbox.apache.org/repos/asf/maven-stage-plugin.git}Git}} / {{{https://github.com/apache/maven-stage-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSTAGE}Jira MSTAGE}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-toolchains-plugin/} <<<toolchains>>>}}     | B          | 3.0.0        | 2019-06-16 | Allows to share configuration across plugins. | {{{https://gitbox.apache.org/repos/asf/maven-toolchains-plugin.git}Git}} / {{{https://github.com/apache/maven-toolchains-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MTOOLCHAINS}Jira MTOOLCHAINS}}
+| {{{/plugins/maven-toolchains-plugin/} <<<toolchains>>>}}     | B          | 3.0.0        | 2019-06-16 | 允许跨插件共享配置。 | {{{https://gitbox.apache.org/repos/asf/maven-toolchains-plugin.git}Git}} / {{{https://github.com/apache/maven-toolchains-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MTOOLCHAINS}Jira MTOOLCHAINS}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-wrapper-plugin/} <<<wrapper>>>}}           | B          | 3.0.1        | 2020-06-02 | Download and unpack the maven wrapper distribution | {{{https://gitbox.apache.org/repos/asf/maven-wrapper-plugin.git}Git}} / {{{https://github.com/apache/maven-wrapper-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MWRAPPER}Jira MWRAPPER}}
+| {{{/plugins/maven-wrapper-plugin/} <<<wrapper>>>}}           | B          | 3.0.1        | 2020-06-02 | 下载并解压缩maven包装器发行版 | {{{https://gitbox.apache.org/repos/asf/maven-wrapper-plugin.git}Git}} / {{{https://github.com/apache/maven-wrapper-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MWRAPPER}Jira MWRAPPER}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 
-  \* <<B>>uild or <<R>>eporting plugin
+  \* 构建或报告插件 <<B>>uild or <<R>>eporting plugin
 
-  There are also some sandbox plugins into our {{{https://svn.apache.org/repos/asf/maven/sandbox/trunk/plugins}source repository}}.
+  我们的{{{https://svn.apache.org/repos/asf/maven/sandbox/trunk/plugins}源代码库}}中也有一些沙盒插件。
   
-  Previous archived versions of plugins reference documentations are {{{../plugins-archives/}located here}}. 
+  以前的插件参考文档存档版本位于{{{../plugins-archives/}此处}}。
 
-* Retired
+* 退隐（Retired）
 
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 || <<Plugin>>                                                  || <<Type*>> || <<Version>> || <<Retired Date>> || <<Description>>
@@ -204,27 +200,26 @@ Available Plugins
 | {{{/plugins/maven-repository-plugin/} <<<repository>>>}}     | B          | 2.4          | 2019-04-30        | Plugin to help with repository-based tasks.
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 
-* Outside The Maven Land
+* 在 Maven 之外
 
-** At MojoHaus (formerly known as {codehaus.org})
+** 在 MojoHaus （以前称为 {codehaus.org}）
 
-  There are also {{{https://www.mojohaus.org/plugins.html}many plug-ins}} available at 
-  the {{{https://github.com/mojohaus} MojoHaus}} project at GitHub.
+  在GitHub的{{{https://github.com/mojohaus} MojoHaus}}项目中也有{{{https://www.mojohaus.org/plugins.html}许多可用的插件}}。
 
-  Here are a few common ones:
+  以下是一些常见的:
 
 *---------------------------------------------------------------------------------+----------------------------------+
 || <<Plugin>> (see {{{https://www.mojohaus.org/plugins.html}complete list with version}}) || <<Description>>
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/} <<<animal-sniffer>>>}}| Build signatures of APIs (JDK for example) and checks your classes against them.
+| {{{https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/} <<<animal-sniffer>>>}}| 构建 APIs 的签名（例如JDK）并对照它们检查类。
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{https://www.mojohaus.org/build-helper-maven-plugin/} <<<build-helper>>>}}    | Attach extra artifacts and source folders to build.
+| {{{https://www.mojohaus.org/build-helper-maven-plugin/} <<<build-helper>>>}}    | 附加额外的工件和源文件夹来构建。
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{https://www.mojohaus.org/castor-maven-plugin/} <<<castor>>>}}                | Generate sources from an XSD using Castor.
+| {{{https://www.mojohaus.org/castor-maven-plugin/} <<<castor>>>}}                | 使用Castor从XSD生成源代码。
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{https://www.mojohaus.org/clirr-maven-plugin/} <<<clirr>>>}}                  | Compare binaries or sources for compatibility using Clirr |
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{https://www.mojohaus.org/javacc-maven-plugin/} <<<javacc>>>}}                | Generate sources from a JavaCC grammar.
+| {{{https://www.mojohaus.org/javacc-maven-plugin/} <<<javacc>>>}}                | 从 JavaCC 语法生成源代码。
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{https://www.mojohaus.org/jdepend-maven-plugin/} <<<jdepend>>>}}              | Generate a report on code metrics using JDepend.
 *---------------------------------------------------------------------------------+----------------------------------+
@@ -236,12 +231,12 @@ Available Plugins
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{https://www.mojohaus.org/taglist-maven-plugin/} <<<taglist>>>}}              | Generate a list of tasks based on tags in your code.
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{https://www.mojohaus.org/versions-maven-plugin/} <<<versions>>>}}            | Manage versions of your project, its modules, dependencies and plugins.
+| {{{https://www.mojohaus.org/versions-maven-plugin/} <<<versions>>>}}            | 管理项目的版本、模块、依赖项和插件。
 *---------------------------------------------------------------------------------+----------------------------------+
 
-** Misc
+** 杂项（Misc）
 
-  A number of other projects provide their own Maven plugins. This includes:
+  许多其他项目也提供了它们自己的Maven插件。这包括:
 
 *----------------------------------------------------------------------------+----------------+-----------------------+
 || <<Plugin>>                                                                || <<Maintainer>> || <<Description>>
@@ -269,8 +264,8 @@ Available Plugins
 | {{{http://buildplan.jcgay.fr/} <<<buildplan>>>}}                           | JC Gay         | Inspect the lifecycle of your build.
 *----------------------------------------------------------------------------+----------------+-----------------------+
 
-* Resources
+* 资料
 
-  [[1]] {{{../guides/mini/guide-configuring-plugins.html}Guide to Configuring Plugins}}
+  [[1]] {{{../guides/mini/guide-configuring-plugins.html}配置插件指南}}
 
   []
