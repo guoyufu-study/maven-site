@@ -1,4 +1,4 @@
-## Introduction
+## 入门
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -18,97 +18,70 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-Maven, a [Yiddish word](https://en.wikipedia.org/wiki/Maven) meaning
-*accumulator of knowledge*, began as an attempt to
-simplify the build processes in the Jakarta Turbine project. There were
-several projects, each with their own Ant build files, that were all
-slightly different. JARs were checked into CVS. We wanted a standard
-way to build the projects, a clear definition of what the project
-consisted of, an easy way to publish project information, and a way to
-share JARs across several projects.
+Maven是一个[意第绪语（Yiddish）单词](https://en.wikipedia.org/wiki/Maven)，意思是*知识的积累者*，
+最初是为了简化 Jakarta Turbine 项目的构建过程。 有几个项目，每个项目都有自己的 Ant 构建文件，它们都略有不同。 JARs 被检入 CVS。
+我们想要一种构建项目的标准方法，一个定义项目由什么组成的明确定义，一种发布项目信息的简单方法，以及一种跨多个项目共享jar的方法。
 
-The result is a tool that can now be used for building and managing any
-Java-based project. We hope that we have created something that will
-make the day-to-day work of Java developers easier and generally help
-with the comprehension of any Java-based project.
+其结果是现在可以用于构建和管理任何基于java的项目的工具。
+我们希望我们已经创建了一些东西，可以使Java开发人员的日常工作变得更容易，并通常有助于理解任何基于Java的项目。
 
-## Maven's Objectives
+## Maven 的目标
 
-Maven's primary goal is to allow a developer to comprehend the complete
-state of a development effort in the shortest period of time. In order
-to attain this goal, Maven deals with several areas of concern:
+Maven的主要目标是让开发人员在最短的时间内理解开发工作的完整状态。为了实现这一目标，Maven处理了几个值得关注的领域：
 
-- Making the build process easy
-- Providing a uniform build system
-- Providing quality project information
-- Encouraging better development practices
+- 简化构建过程
+- 提供统一的构建系统
+- 提供优质项目信息
+- 鼓励更好的开发实践
 
-### Making the build process easy
+### 简化构建过程
 
-While using Maven doesn't eliminate the need to know about the
-underlying mechanisms, Maven does shield developers from many details.
+虽然使用Maven并不能消除（eliminate）了解底层机制的需要，但Maven确实可以让开发人员避开（shield）许多细节。
 
-### Providing a uniform build system
+### 提供统一的构建系统
 
-Maven builds a project using its project object model (POM) and
-a set of plugins. Once you familiarize yourself with one Maven
-project, you know how all Maven projects build.
-This saves time when navigating many projects.
+Maven使用其项目对象模型（POM）和一组插件构建一个项目。
+一旦您熟悉了（familiarize）一个Maven项目，您就知道了所有Maven项目是如何构建的。这样可以在浏览（navigating）许多项目时节省时间。
 
-### Providing quality project information
+### 提供优质项目信息
 
-Maven provides useful project information that is in part
-taken from your POM and in part generated from your project's sources.
-For example, Maven can provide:
+Maven提供了一些有用的项目信息，这些信息一部分来自POM，一部分来自项目的源代码。例如，Maven可以提供:
 
--   Change log created directly from source control
--   Cross referenced sources
--   Mailing lists managed by the project
--   Dependencies used by the project
--   Unit test reports including coverage
+-   直接从源代码管理创建的更改日志
+-   交叉引用源
+-   由项目管理的邮件列表
+-   项目使用的依赖项
+-   单元测试报告，包括覆盖率
 
-Third party code analysis products also provide Maven plugins that add their
-reports to the standard information given by
-Maven.
+第三方代码分析产品还提供了Maven插件，可以将它们的报告添加到 Maven 提供的标准信息中。
 
-### Providing guidelines for best practices development
+### 提供最佳实践开发指南
 
-Maven aims to gather current principles for best practices development
-and make it easy to guide a project in that direction.
+Maven的目标是收集（gather）当前最佳实践开发的原则（principles），并使之易于指导项目朝这个方向发展。
 
-For example, specification, execution, and reporting of unit tests are
-part of the normal build cycle using Maven. Current unit testing best
-practices were used as guidelines:
+例如，单元测试的规范、执行和报告是使用Maven的正常构建周期的一部分。当前的单元测试最佳实践被用作指导方针：
 
--   Keeping test source code in a separate, but parallel source tree
--   Using test case naming conventions to locate and execute tests
--   Having test cases setup their environment instead of
-    customizing the build for test preparation
+-   将测试源代码保存在独立但并行的源代码树中
+-   使用测试用例命名约定来定位和执行测试
+-   让测试用例设置他们的环境，而不是为测试准备定制构建
 
-Maven also assists in project workflow such as release and issue management.
+Maven还协助（assists in）项目工作流，如发布和问题管理（issue management）。
 
-Maven also suggests some guidelines on how to layout your project's
-directory structure. Once you learn the layout, you can easily
-navigate other projects that use Maven.
+Maven还就如何布局项目的目录结构提出了一些建议。一旦您了解了布局，就可以轻松地浏览其他使用Maven的项目。
 
-While takes an opinionated approach to project layout, some projects
-may not fit with this structure for historical reasons. While Maven is
-designed to be flexible to the needs of different projects,
-it cannot cater to every situation without compromising its objectives.
+虽然对项目布局采取了固执己见的做法（an opinionated approach），但由于历史原因，一些项目可能不适合（fit with）这种结构。
+虽然Maven的设计可以灵活地（flexible）满足不同项目的需求，但它不能在不损害（compromising）目标的情况下满足（cater）每一种情况。
 
-If your project has an unusual build structure that 
-cannot be reorganized, you may have to forgo some features or the use of
-Maven altogether.
+如果您的项目有一个不寻常的构建结构，无法重新组织，那么您可能不得不放弃（forgo）一些特性或完全（altogether）放弃Maven的使用。
 
-## What is Maven Not?
+## Maven不是什么？
 
-You might have heard some of the following things about Maven:
+你可能听说过以下一些关于Maven的事情:
 
--   Maven is a site and documentation tool
--   Maven extends Ant to let you download dependencies
--   Maven is a set of reusable Ant scriptlets
+-   Maven 是一个站点和文档工具
+-   Maven 扩展了Ant，让您可以下载依赖项
+-   Maven 是一组可重用的Ant脚本
 
-While Maven does these things, as you can read above in the "What is
-Maven?" section, these are not the only features Maven has, and its
-objectives are quite different.
+就像你可以在上面的 “Maven 是什么？” 部分中看到的一样，Maven 能完成这些事情，但是 
+这些不是 Maven 的唯一特性，它的目标也完全不同。
 
