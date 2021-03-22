@@ -28,25 +28,25 @@
 
 Maven in 5 Minutes
 
-* Prerequisites
+* 预备知识（Prerequisites）
 
-  You must have an understanding of how to install software on your computer.
-  If you do not know how to do this, please ask someone at your office, school, etc 
-  or pay someone to explain this to you. The Maven mailing lists are not the best place to ask for this advice.
+    你必须了解如何在你的计算机上安装软件。
+    如果你不知道该怎么做，请询问你办公室、学校等的人，或者花钱请人给你解释一下。
+    Maven邮件列表并不是寻求这一建议（ask for this advice）的最佳场所。
 
-* Installation
+* 安装
 
-  <Maven is a Java tool, so you must have {{{https://www.oracle.com/technetwork/java/javase/downloads/index.html}Java}}
- installed in order to proceed.>
+    <Maven是一个Java工具，因此您必须安装 {{{https://www.oracle.com/technetwork/java/javase/downloads/index.html}Java}}
+    才能继续。>
 
-  First, {{{../../download.html}download Maven}} and follow the {{{../../install.html}installation instructions}}.
-  After that, type the following in a terminal or in a command prompt:
+    首先，{{{../../download.html}下载Maven}} 并按照 {{{../../install.html}安装说明}} 进行安装。
+    然后，在终端或命令提示符中输入以下内容:
 
 -----
 mvn --version
 -----
 
-  It should print out your installed version of Maven, for example:
+    它应该会打印出你安装的Maven版本，例如:
 
 -----
 Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
@@ -56,16 +56,13 @@ Default locale: en_US, platform encoding: Cp1250
 OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 -----
 
-  Depending upon your network setup, you may require extra configuration. Check out the
-  {{{../mini/guide-configuring-maven.html}Guide to Configuring Maven}} if necessary.
+    根据您的网络设置，您可能需要额外的配置。如有必要，请参阅 {{{../mini/guide-configuring-maven.html}Maven配置指南}}。
 
-  <<If you are using Windows, you should look at>> {{{./windows-prerequisites.html}Windows Prerequisites}}
-  <<to ensure that you are prepared to use Maven on Windows.>>
+ <<如果您正在使用Windows，您应该查看>> {{{./windows-prerequisites.html}Windows先决条件}}<<，以确保您已经准备好在Windows上使用Maven。>>
 
-* Creating a Project
+* 创建一个项目
 
-  You will need somewhere for your project to reside, create a directory somewhere and start a shell in that directory.
-  On your command line, execute the following Maven goal:
+    您需要有一个地方让您的项目驻留（reside），在某个地方创建一个目录并在该目录中启动shell。在命令行中，执行以下Maven目标:
 
 -----
 mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
@@ -74,17 +71,15 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
   <If you have just installed Maven, it may take a while on the first run. This is because Maven is downloading
   the most recent artifacts (plugin jars and other files) into your local repository. You may also need to
   execute the command a couple of times before it succeeds. This is because the remote server may time out before
-  your downloads are complete. Don't worry, there are ways to fix that.>
+  your downloads are complete. 别担心，有办法解决的。>
 
-  You will notice that the <generate> goal created a directory with the same name given as the
-  artifactId. Change into that directory.
+    您将注意到，<generate> 目标创建了一个与 artifactId 相同名称的目录。切换到该目录。
 
 -----
 cd my-app
 -----
 
-  Under this directory you will notice the following
-  {{{../introduction/introduction-to-the-standard-directory-layout.html}standard project structure}}.
+    在此目录下，您将注意到以下{{{../introduction/introduction-to-the-standard-directory-layout.html}标准项目结构}}。
 
 -----
 my-app
@@ -109,10 +104,10 @@ my-app
 
 ** The POM
 
-  The <<<pom.xml>>> file is the core of a project's configuration in Maven. It is a single configuration
-  file that contains the majority of information required to build a project in just the way you want.
-  The POM is huge and can be daunting in its complexity, but it is not necessary to understand all
-  of the intricacies just yet to use it effectively. This project's POM is:
+    这个 <<<pom.xml>>> 文件文件是 Maven 中项目配置的核心。
+    它是一个单一的配置文件，包含以您想要的方式构建项目所需的大部分（the majority of）信息。
+    POM非常庞大（huge），它的复杂性让人望而生畏（daunting），但要有效地使用它，并不需要理解所有的复杂性（intricacies）。
+    本项目POM为：
 
 +-----+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -139,24 +134,22 @@ my-app
 </project>
 +-----+
 
-** What did I just do?
+** 我刚才做了什么?
 
-  You executed the Maven goal <archetype:generate>, and passed in various parameters to that goal.
-  The prefix <archetype> is the {{{../../plugins/index.html}plugin}} that provides the goal. If you are familiar with
-  {{{http://ant.apache.org}Ant}}, you
-  may conceive of this as similar to a task. This <archetype:generate> goal created a simple project based upon
-  a {{{/archetypes/maven-archetype-quickstart/}maven-archetype-quickstart}} archetype.
-  Suffice it to say for now that a <plugin> is a collection
-  of <goals> with a general common purpose. For example the jboss-maven-plugin, whose purpose is "deal with
-  various jboss items".
+    您执行了 Maven 目标 <archetype:generate>，并向该目标传递了各种参数。
+    前缀 <archetype> 是提供目标的 {{{../../plugins/index.html}插件}}。
+    如果您熟悉 {{{http://ant.apache.org}Ant}}，可以将其视为类似于任务。
+    这个 <archetype:generate> 目标基于 {{{/archetypes/maven-archetype-quickstart/}maven-archetype-quickstart}} 原型创建了一个简单的项目。
+    现在可以这样说（Suffice it to say for now that），插件是目标的一个集合，有一个共同的目的。
+    例如 jboss-maven-plugin ，其目的是“处理各种jboss项目”。
 
-** Build the Project
+** 构建项目
 
 -----
 mvn package
 -----
 
-  The command line will print out various actions, and end with the following:
+    命令行将打印出各种操作，并以以下内容结束：
 
 -----
  ...
@@ -169,9 +162,9 @@ mvn package
 -----
 
   Unlike the first command executed (<archetype:generate>) you may notice the second is simply
-  a single word - <package>. Rather than a <goal>, this is a <phase>. A phase is a step in the
-  {{{../introduction/introduction-to-the-lifecycle.html}build lifecycle}}, which is an ordered
-  sequence of phases. When a phase is given, Maven will execute every phase in the sequence
+  a single word - <package>. Rather than a <goal>, this is a <phase>.
+  一个阶段是 {{{../introduction/introduction-to-the-lifecycle.html}构建生命周期}} 中的一个步骤，生命周期是一个有序的阶段序列。
+  When a phase is given, Maven will execute every phase in the sequence
   up to and including the one defined. For example, if we execute the <compile> phase, the
   phases that actually get executed are:
 
@@ -189,27 +182,25 @@ mvn package
 
   []
 
-  You may test the newly compiled and packaged JAR with the following command:
+    您可以使用以下命令测试新编译和打包的JAR：
 
 -----
 java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
 -----
 
-  Which will print the quintessential:
+    它将打印精华（quintessential）:
 
 -----
 Hello World!
 -----
 
-* Java 9 or later
+* Java 9或更高版本
 
-  By default your version of Maven might use an old version of the <<<maven-compiler-plugin>>> 
-  that is not compatible with Java 9 or later versions. To target Java 9 or later,
-  you should at least use version 3.6.0 of the <<<maven-compiler-plugin>>> and set the 
-  <<<maven.compiler.release>>> property to the Java release you are targetting  (e.g. 9, 10, 11, 12, etc.).
+    默认情况下，您的 Maven 版本可能使用 <<<maven-compiler-plugin>>> 的旧版本，该版本与Java 9或更高版本不兼容。
+    要以Java9或更高版本为目标，您至少应该使用 <<<maven-compiler-plugin>>> 的3.6.0版本，
+    并将 <<<maven.compiler.release>>> 属性设置为目标的Java版本（例如9、10、11、12等）。
 
-  In the following example, we have configured our Maven project to use version 3.8.1 of <<<maven-compiler-plugin>>>
-  and target Java 11:
+    在下面的示例中，我们已将Maven项目配置为使用 <<<maven-compiler-plugin>>> 的3.8.1版，并以Java 11为目标：
 
 +-----+
     <properties>
@@ -229,13 +220,13 @@ Hello World!
     </build>
 +-----+
 
-  To learn more about <<<javac>>>'s <<<--release>>> option, see {{{https://openjdk.java.net/jeps/247}JEP 247}}.
+    要了解更多关于 <<<javac>>> 的 <<<--release>>> 选项，请参见 {{{https://openjdk.java.net/jeps/247}JEP 247}}。
 
-* Running Maven Tools
+* 运行 Maven 工具
 
-** Maven Phases
+** Maven 阶段
 
-  Although hardly a comprehensive list, these are the most common <default> lifecycle phases executed.
+    虽然不是一个全面的（comprehensive）列表，但这些是最常见的<默认>执行的生命周期阶段。
 
   * <<validate>>: validate the project is correct and all necessary information is available
 
@@ -247,7 +238,7 @@ Hello World!
 
   * <<integration-test>>: process and deploy the package if necessary into an environment where integration tests can be run
 
-  * <<verify>>: run any checks to verify the package is valid and meets quality criteria
+  * <<verify>>: run any checks to verify the package is valid 并且符合质量标准。
 
   * <<install>>: install the package into the local repository, for use as a dependency in other projects locally
 
@@ -255,7 +246,7 @@ Hello World!
 
   []
 
-  There are two other Maven lifecycles of note beyond the <default> list above. They are
+    除了上面的<默认>列表之外，还有另外两个Maven生命周期值得注意。他们是
 
   * <<clean>>: cleans up artifacts created by prior builds
 
@@ -265,30 +256,27 @@ Hello World!
 
   []
 
-  Phases are actually mapped to underlying goals. The specific goals executed per phase is dependant upon the
-  packaging type of the project. For example, <package> executes <jar:jar> if the project type is a JAR, and
-  <war:war> if the project type is - you guessed it - a WAR.
+    阶段实际上是映射到基本（underlying）目标的。每个阶段执行的具体目标取决于项目的打包类型。
+    例如，如果项目类型是 JAR, <package> 就执行 <jar:jar>，如果项目类型是——你猜到了——WAR，则执行 <war:war>。
 
-  An interesting thing to note is that phases and goals may be executed in sequence.
+    值得注意的一件有趣的事情是，阶段和目标可能是按顺序执行的。
 
 -----
 mvn clean dependency:copy-dependencies package
 -----
 
-  This command will clean the project, copy dependencies, and package the project (executing all phases up to
-  <package>, of course).
+    此命令将清理项目、复制依赖项并打包项目（当然，执行 <package> 之前的所有阶段）。
 
-** Generating the Site
+** 生成站点
 
 -----
 mvn site
 -----
 
-  This phase generates a site based upon information on the project's pom. You can look at the
-  documentation generated under <<<target/site>>>.
+    这个阶段根据项目的pom信息生成一个站点。您可以查看在 <<<target/site>>> 下生成的文档。
 
-* Conclusion
+* 结尾（Conclusion）
 
-  We hope this quick overview has piqued your interest in the versatility of Maven. Note that this is a very
-  truncated quick-start guide. Now you are ready for more comprehensive details concerning
-  the actions you have just performed. Check out the {{{./index.html}Maven Getting Started Guide}}.
+    我们希望这篇简短的概述（quick overview）能激起您对 Maven 的多功能性的兴趣。
+    这是一个非常简短的快速入门指南。现在您已经准备好了解有关您刚刚执行的操作的更全面（comprehensive）的细节了。
+    查看 {{{./index.html}Maven入门指南}}。
