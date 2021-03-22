@@ -1,4 +1,4 @@
-# Installing Apache Maven
+# 安装 Apache Maven
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -17,14 +17,13 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-The installation of Apache Maven is a simple process of extracting the archive 
-and adding the `bin` folder with the `mvn` command to the `PATH`.
+Apache Maven 的安装是一个简单的过程，解压归档文件，并将带有`mvn`命令的`bin`文件夹添加到`PATH`中。
 
-Detailed steps are:
+具体步骤如下：
 
-* Ensure `JAVA_HOME` environment variable is set and points to your JDK installation
+* 确保设置了`JAVA_HOME`环境变量并指向您的 JDK 安装
 
-* Extract distribution archive in any directory 
+* 在任何目录中解压分发存档
 
 ```cmd
 unzip apache-maven-${currentStableVersion}-bin.zip
@@ -34,12 +33,11 @@ or
 tar xzvf apache-maven-${currentStableVersion}-bin.tar.gz
 ```
 
-Alternatively use your preferred archive extraction tool.
+或者使用您首选的存档提取工具。
 
-* Add the `bin` directory of the created directory `apache-maven-${currentStableVersion}` to 
-the `PATH` environment variable
+* 将创建的目录`apache-maven-${currentStableVersion}`中的`bin`目录添加到`PATH`环境变量中
 
-* Confirm with `mvn -v` in a new shell. The result should look similar to
+* 在新的 shell 中使用`mvn -v`确认。结果应该类似于
 
 ```
 Apache Maven ${currentStableVersion} (${currentStableVersionDetails})
@@ -50,35 +48,35 @@ Default locale: en_US, platform encoding: UTF-8
 OS name: "mac os x", version: "10.8.5", arch: "x86_64", family: "mac"
 ```
 
-Windows Tips
+Windows 技巧
 -----
 
-* Check environment variable value e.g.
+* 检查环境变量值，如:
 
 ```cmd
 echo %JAVA_HOME% 
 C:\Program Files\Java\jdk1.7.0_51
 ```
 
-* Adding to `PATH`:  Add the unpacked distribution's bin directory to your user PATH environment variable 
+* 添加到 `PATH`:  Add the unpacked distribution's bin directory to your user PATH environment variable
 by opening up the system properties (WinKey + Pause), selecting the "Advanced" tab, and 
 the "Environment Variables" button, then adding or selecting the <i>PATH</i>
 variable in the user variables with the value `C:\Program Files\apache-maven-${currentStableVersion}\bin`.
 The same dialog can be used to set `JAVA_HOME` to the location of your JDK, e.g. `C:\Program Files\Java\jdk1.7.0_51`
 
-* Open a new command prompt (Winkey + R then type `cmd`) and run `mvn -v` to verify the installation.
+* 打开一个新的命令提示符 (Winkey + R 然后键入 `cmd`) 并运行 `mvn -v` 来验证安装。
 
-Unix-based Operating System (Linux, Solaris and Mac OS X) Tips
+基于 Unix 的操作系统 (Linux, Solaris and Mac OS X) 技巧
 -----
 
-* Check environment variable value
+* 检查环境变量值
 
 ```sh
 echo $JAVA_HOME
 /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
 ```
 
-* Adding to `PATH`
+* 添加到 `PATH`
 
 ```sh
 export PATH=/opt/apache-maven-${currentStableVersion}/bin:$PATH
