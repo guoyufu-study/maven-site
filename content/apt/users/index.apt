@@ -26,28 +26,27 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ https://maven.apache.org/doxia/references/apt-format.html
 
-Maven Users Centre
+Maven 用户中心
 
-  This documentation centre is for those that have decided to use Maven to build their project, and would like to get
-  started quickly, or are already using Maven and would like to add new functionality or fix a problem in their build.
+         这个文档中心是为那些已经决定使用Maven来构建项目，并且想快速开始，或者已经在使用Maven并想在构建中添加新功能或修复问题的人准备的。
 
 ~~TODO: tasks as buttons?
 
-  * {{{../download.html} Download Maven}} - Download the latest version of Maven
+  * {{{../download.html} 下载 Maven}} - 下载 Maven 的最新版本
 
-  * {{{../guides/getting-started/maven-in-five-minutes.html} The 5 minute test}} - Learn how to use Maven in 5 minutes
+  * {{{../guides/getting-started/maven-in-five-minutes.html} 5分钟测试}} - 在5分钟内学习如何使用 Maven
 
-  * {{{../guides/getting-started/index.html} Getting Started Tutorial}} - An in depth tutorial once you've learned the basics
+  * {{{../guides/getting-started/index.html} 入门教程}} - 一个深入的教程，一旦你学会了基础知识
 
-  * {{{./getting-help.html} Getting Help}} - How to get help with Maven
+  * {{{./getting-help.html} 寻求帮助}} - 如何寻求 Maven 的帮助
 
 ~~TODO: old getting started guide should become a beginners trail, and remove content covered in the 5 minute tutorial
 
 ~~TODO: link to repository centre and plugin developers centre, and the reasons why they would progress there
 
-* Reference
+* 参考
 
-  * {{{../pom.html} POM Reference}}
+  * {{{../pom.html} POM 参考}}
 
-  * {{{../settings.html} Settings Reference}}
+  * {{{../settings.html} Settings 参考}}
 
