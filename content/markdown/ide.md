@@ -1,4 +1,4 @@
-# Apache Maven IDE Integration
+# Apache Maven IDE 集成
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -17,7 +17,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-All popular development environments for the Java platform support Apache Maven.
+所有流行的Java平台开发环境都支持Apache Maven。
 
 ## Apache NetBeans IDE
 
