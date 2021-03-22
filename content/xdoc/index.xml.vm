@@ -28,110 +28,102 @@ under the License.
   </properties>
   <body>
 
-    <section name="Welcome to Apache Maven">
+    <section name="欢迎使用 Apache Maven">
 
       <!-- TODO: I reckon it's time for a new description -->
       <p>
-        Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model
-        (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
+        Apache Maven是一个软件项目管理和理解工具。基于项目对象模型（POM）的概念，Maven可以从一个中心信息块管理项目的构建、报告和文档。
       </p>
       <p>
-        If you think that Maven could help your project, you can find out more information in the "About Maven"
-        section of the navigation. This includes an in-depth description of <a href="what-is-maven.html">what Maven is</a> and
-        a <a href="maven-features.html">list of some of its main features</a>.
+        如果您认为Maven可以帮助您的项目，您可以在导航栏的“关于Maven”部分找到更多信息。
+        这包括对<a href="what-is-maven.html">Maven</a>的深入描述和它的<a href="maven-features.html">一些主要特性的列表</a>。
       </p>
       <p>
         <!-- TODO: this could be the big button type thing instead of a list of links -->
-        This site is separated into the following sections, depending on how you'd like to use Maven:
+        根据您使用Maven的方式，本网站分为以下几个部分：
       </p>
       <!-- TODO: use CSS -->
       <table>
       <tr>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="2">Use</th>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
-          <a href="download.html">Download</a>, <a href="install.html">Install</a>, <a href="run.html">Run</a> Maven
+          <a href="download.html">下载</a>, <a href="install.html">安装</a>, <a href="run.html">运行</a> Maven
         </th>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
-          <a href="configure.html">Configure</a>, <a href="users/index.html">Use</a> Maven and <a href="plugins/index.html">Maven Plugins</a>
+          <a href="configure.html">配置</a>, <a href="users/index.html">使用</a> Maven 和 <a href="plugins/index.html">Maven 插件</a>
         </th>
       </tr>
       <tr>
-        <td>Information for those needing to build a project that uses Maven</td>
+        <td>为那些需要构建使用Maven的项目的人提供的信息</td>
         <td>
-            Information for developers using Maven to build their project, including a "10 minute test" that gives a
-            practical overview of Maven's main features and a <a href="plugins/index.html">plugin list</a>
-            for more information on each plugin.
+          为使用Maven构建项目的开发人员提供的信息，包括一个“10分钟测试”，它提供了Maven主要特性的实际概述，以及一个<a href="plugins/index.html">插件列表</a>，以获取关于每个插件的更多信息。
         </td>
       </tr>
       <tr>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="2">Extend</th>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="plugin-developers/index.html">Write Maven Plugins</a></th>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="repository/index.html">Improve the Maven Central Repository</a></th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="2">扩展</th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="plugin-developers/index.html">编写 Maven 插件</a></th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="repository/index.html">改进 Maven 中央存储库</a></th>
       </tr>
       <tr>
         <td>
-            Information for developers writing Maven plugins.
+          为开发人员编写Maven插件提供的信息
         </td>
         <td>
-            Information for those who may or may not use Maven, but are interested in getting project metadata into the
-            <a href="repository/index.html">central repository</a>.
+            为那些可能使用或不使用Maven，但对将项目元数据放入<a href="repository/index.html">中央存储库</a>感兴趣的人提供的信息。
         </td>
       </tr>
       <tr>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="2">Contribute</th>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="guides/development/guide-helping.html">Help Maven</a></th>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="developers/index.html">Develop Maven</a></th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="2">贡献</th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="guides/development/guide-helping.html">帮助 Maven</a></th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="developers/index.html">开发 Maven</a></th>
       </tr>
       <tr>
         <td>
-            Information if you'd like to get involved. Maven is an open source community and welcomes contributions.
+            如果你想参与（get involved）的话。Maven是一个开源社区，欢迎投稿。
         </td>
         <td>
-            Information for those who are currently Maven developers, or who are interested
-            in contributing to the Maven project itself.
+            为当前的Maven开发人员，或者有兴趣为Maven项目本身做出贡献的人员提供的信息。
         </td>
       </tr>
       </table>
       <p>
-        Each guide is divided into a number of trails to get you started on a particular topic, and includes a
-        reference area and a "cookbook" of common examples.
+        每个指南都分为若干条路径，让您从一个特定的主题开始，并包括一个参考区域和一本常见示例的“食谱”。
       </p>
       <p>
-        You can access the guides at any time from the left navigation.
-        If you are looking for a quick reference, you can use the <a href="guides/index.html">documentation index</a>.
+        您可以随时从左侧导航栏访问指南。如果您正在寻找快速参考，可以使用<a href="guides/index.html">文档索引</a>。
       </p>
 
-      <h3>How to Get Support</h3>
+      <h3>如何获得支持</h3>
       <p>
-        Support for Maven is available in a variety of different forms.
+        对Maven的支持有多种不同的形式。
       </p>
       <p>
-        To get started, search the documentation,
-        <a href="issue-management.html">issue management system</a>, the <a href="https://cwiki.apache.org/confluence/display/MAVEN">wiki</a>
-        or the <a href="mailing-lists.html">mailing list archives</a> to
-        see if the problem has been solved or reported before.
+        首先（To get started），搜索文档、
+        <a href="issue-management.html">问题管理系统</a>、
+        <a href="https://cwiki.apache.org/confluence/display/MAVEN">wiki</a>
+        或<a href="mailing-lists.html">邮件列表存档</a>，查看问题是否已经解决或以前报告过。
       </p>
       <p>
-        If the problem has not been reported before, the recommended way to get help is to
-        subscribe to the <a href="mailing-lists.html">Maven Users Mailing list</a>. Many other users and Maven developers
-        will answer your questions there, and the answer will be archived for others in the future.
+        如果这个问题以前没有被报告过，那么获得帮助的推荐方法是订阅<a href="mailing-lists.html">Maven用户邮件列表</a>。
+        许多其他用户和Maven开发人员将在那里回答您的问题，并且答案将在将来存档供其他人使用。
       </p>
       <p>
-        You can also reach the Maven developers on <a href="community.html">IRC</a>.
+        您也可以通过<a href="community.html">IRC</a>联系到Maven开发人员。
       </p>
 
-      <h3>Apache Software Foundation</h3>
+      <h3>阿帕奇软件基金会（Apache Software Foundation）</h3>
       <p>
-        Maven is a part of the Apache Software Foundation. We'd like to <a href="https://www.apache.org/foundation/thanks.html">thank
-        the sponsors</a> that provide financial assistance to the foundation. For more information on how you can support the
-        foundation, see the <a href="https://www.apache.org/foundation/sponsorship.html">sponsorship</a> page.
+        Maven 是 Apache 软件基金会的一部分。
+        我们要感谢向基金会提供经济援助的<a href="https://www.apache.org/foundation/thanks.html">赞助人</a>。
+        有关如何支持基金会的更多信息，请参阅<a href="https://www.apache.org/foundation/sponsorship.html">赞助</a>页面。
       </p>
       <p>
         <a href="https://www.apache.org/events/current-event.html">
           <img src="https://www.apache.org/events/current-event-234x60.png" alt="Apache Events" style="float: left"/>
         </a>
-        You can also attend <a href="https://www.apache.org/events/current-event.html">Apache Events</a>. Don't hesitate to ask on the <a href="mailing-lists.html">Maven User mailing list</a>
-        if Maven team members will be there. It can be a great opportunity to meet them.
+        您还可以参加 <a href="https://www.apache.org/events/current-event.html">Apache活动</a>。
+        不要犹豫，在 <a href="mailing-lists.html">Maven用户邮件列表</a>上询问Maven团队成员是否会在那里。
+        这是认识他们的好机会。
       </p>
     </section>
   </body>
